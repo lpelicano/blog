@@ -1,0 +1,19 @@
+<!-- DOCTYPE HTML -->
+<html>
+	<body>
+		<h1>{{ title }} is working!</h1>
+
+		<div class="content">
+			{% for obj in object_list %}
+			{% url 'posts:detail' obj.pk %}
+			<div class="posts">
+				<span><a href="{ obj.get_absolute_url }">{{ obj.title }}</a></span>
+				<span>{{ obj.content }}</span>
+				<span>{{ obj.timestamp }}</span>
+				<span>{{ obj.updated }}</span>
+				<span>{{ obj.id }}</span>
+			</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
